@@ -32,14 +32,14 @@ jobs:
       - name: Build and push backend image
         uses: docker/build-push-action@v5
         with:
-          context: ./backend-flask
+          context: ./
           platforms: linux/amd64
           push: true
           no-cache: true
           tags: |
-            ${{ env.DOCKER_BACKEND_IMAGE }}:2.0.1
+            ${{ env.DOCKER_BACKEND_IMAGE }}:2.0.0
             ${{ env.DOCKER_BACKEND_IMAGE }}:${{ github.sha }}
-          cache-from: type=registry,ref=${{ env.DOCKER_BACKEND_IMAGE }}:2.0.1
+          cache-from: type=registry,ref=${{ env.DOCKER_BACKEND_IMAGE }}:2.0.0
           cache-to: type=inline
 
   deploy:
