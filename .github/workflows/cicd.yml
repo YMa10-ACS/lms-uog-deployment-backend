@@ -39,7 +39,7 @@ jobs:
           tags: |
             ${{ env.DOCKER_BACKEND_IMAGE }}:2.0.1
             ${{ env.DOCKER_BACKEND_IMAGE }}:${{ github.sha }}
-          cache-from: type=registry,ref=${{ env.DOCKER_BACKEND_IMAGE }}:2.0.1
+          cache-from: type=registry,ref=${{ env.DOCKER_BACKEND_IMAGE }}:2.0.0
           cache-to: type=inline
 
   deploy:
