@@ -49,7 +49,7 @@ jobs:
           cat > sonar-project.properties << 'EOL'
           sonar.organization=${{ secrets.SONAR_ORGANIZATION }}
           sonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
-          sonar.projectName=LMS System
+          sonar.projectName=lms-uog-deployment-backend
 
           sonar.sources=./
           sonar.tests=./tests
