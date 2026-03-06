@@ -115,6 +115,12 @@ def api_route():
 
     return jsonify({'message': '/API endpoint called !'}), 200
 
+@app.route('/file/<file_name>', methods=['GET'])
+def file_content(file_name):
+    file_path = os.path.join(app.config['UPLOAD_FOLDER'], file_name)
+    file_content = open(file_path).read()
+    return jsonify({'message': f'content = {file_content}'}), 200
+
 @app.route('/api/grade-submission', methods=['POST'])
 def grade_submission():
     data = request.get_json()
